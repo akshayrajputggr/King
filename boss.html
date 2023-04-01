@@ -1,0 +1,74 @@
+<html>
+    <body>
+        <style>
+        button
+        {
+            position: absolute;
+            top: 200px;
+            width: 50px;
+            height: 60px;
+            font-size: 40px;
+            background: none;
+            transition: 5s;
+        }
+        button:hover
+        {
+            background-color: aqua;
+        }
+        #a
+        {
+            border-radius: 12px 0px 0px 12px; 
+            border: none;
+            
+        }
+        #b
+        {
+            right: 10px;
+            border: none;
+            border-radius: 0px 12px 12px 0px;
+        }
+        .image
+        {
+           
+        }
+        </style>
+        <div class="image"><img src="download.jfif" width="100%"></div>
+        <div class="image"><img src="images.jfif" width="100%"></div>
+        <div class="image"><img src="thar 1.jfif" width="100%"></div>
+        <div class="image"><img src="images (1).jfif" width="100%"></div>
+        <button id="a" onclick="d(-1)"><</button>
+        <button id="b" onclick="d(1)">></button>
+
+        <script>
+            let s = 1;
+            slider(s);
+
+            function d(n)
+            {
+           slider(s+=n)
+            }
+
+            function slider(n)
+            {
+               let i;
+               let slides = document.getElementsByClassName("image");
+                if(n<1)
+                {
+                    s = slides.length;
+                }
+                if(n>slides.length)
+                {
+                    s=1;
+                }
+
+                for(i=0;i<slides.length;i++)
+                {
+                    slides[i].style.display = "none";
+                }
+                slides[s-1].style.display = "block";
+            }
+            
+        </script>
+    </body>
+
+</html>
